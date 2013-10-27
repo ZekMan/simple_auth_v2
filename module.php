@@ -4,7 +4,7 @@ class mysql {
 	###
 	#	Подключение к бд
 	function connect($db_host, $db_login, $db_passwd, $db_name) {
-		mysql_connect($db_host, $db_name, $db_passwd) or die ("MySQL Error: " . mysql_error()); //~ устанавливаем подключение с бд
+		mysql_connect($db_host, $db_login, $db_passwd) or die ("MySQL Error: " . mysql_error()); //~ устанавливаем подключение с бд
 		mysql_query("set names utf8") or die ("<br>Invalid query: " . mysql_error()); //~ указываем что передаем данные в utf8
 		mysql_select_db($db_name) or die ("<br>Invalid query: " . mysql_error()); //~ выбираем базу данных
 	}
